@@ -967,29 +967,35 @@
     </style>
 </head>
 <body>
-    <header style="background: linear-gradient(135deg, #330072 0%, #9678D3 100%); padding: 25px 0; box-shadow: 0 4px 20px rgba(51, 0, 114, 0.3);">
-        <div class="container" style="text-align: center;">
-            <h1 style="margin: 0 0 10px 0; font-size: 2.5rem; font-weight: 700; color: #FFFFFF !important; text-shadow: none; background: none !important; -webkit-text-fill-color: #FFFFFF !important;">High Point University</h1>
-            <p style="margin: 0 0 15px 0; font-size: 1.2rem; color: #FFFFFF !important; font-weight: 500; text-shadow: none;">Office of Accessibility Resources and Services (OARS)</p>
-            <div style="height: 2px; width: 200px; background: rgba(255,255,255,0.6); margin: 0 auto 12px auto;"></div>
-            <p class="subtitle" style="color: #FFFFFF !important; font-size: 1.1rem; margin: 0; font-weight: 500; text-shadow: none;">Interactive Video Tutorial</p>
+    <header style="background: linear-gradient(135deg, #330072 0%, #9678D3 100%); padding: 12px 0; box-shadow: 0 4px 20px rgba(51, 0, 114, 0.3);">
+        <div style="max-width: 1400px; width: 95%; margin: 0 auto; padding: 0 10px;">
+            <div style="max-width: calc(100% - 180px); text-align: center;">
+                <h1 style="margin: 0 0 8px 0; font-size: 2rem; font-weight: 700; color: #FFFFFF !important; text-shadow: none; background: none !important; -webkit-text-fill-color: #FFFFFF !important;">High Point University</h1>
+                <p style="margin: 0 0 10px 0; font-size: 1.1rem; color: #FFFFFF !important; font-weight: 500; text-shadow: none;">Office of Accessibility Resources and Services (OARS)</p>
+                <div style="height: 2px; width: 200px; background: rgba(255,255,255,0.6); margin: 0 auto 10px auto;"></div>
+                <p class="subtitle" style="color: #FFFFFF !important; font-size: 1.05rem; margin: 0; font-weight: 500; text-shadow: none;">Interactive Video Tutorial</p>
+            </div>
         </div>
     </header>
     <div class="container">
-        <div class="panel">
-            <p style="text-align: center; color: var(--text-gray); margin-bottom: 20px; font-size: 1.1rem;">Watch and learn with interactive questions, notes, and zoom highlights!</p>
-            <div class="video-container" style="position: relative;">
-                <div id="videoContainer">
-                    <iframe id="youtubePlayer" src="https://www.youtube.com/embed/5kPhbTnyvwo?enablejsapi=1&rel=0&modestbranding=1&iv_load_policy=3&autoplay=1&mute=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="width:100%;height:500px;border:none;"></iframe>
+        <div class="panel" style="max-width: 1400px; width: 95%; margin: 0 auto; padding: 10px;">
+            <div style="display: flex; gap: 20px; align-items: flex-start;">
+                <div id="videoContainer" style="flex: 1;">
+                    
+                    <video id="videoPlayer" controls autoplay style="width: 100%; max-height: 600px; border-radius: 8px; display: block;">
+                        <source src="https://tjpeddle.github.io/Natural-Reader-Tutorial/Natural%20Reader%20V.%205%203-28-2026.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
                 </div>
-                <div style="display: flex; gap: 15px; justify-content: center; margin-top: 20px; padding: 15px; background: rgba(51, 0, 114, 0.05); border-radius: 8px;">
-                    <button id="playPauseBtn" onclick="togglePlayPause()" style="background: #330072; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: 600; min-width: 120px;">
-                        ▶️ Play
+                <div style="display: flex; flex-direction: column; gap: 15px; min-width: 160px;">
+                    <button id="playPauseBtn" onclick="togglePlayPause()" style="background: #330072; color: white; border: none; padding: 15px 20px; border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: 600; min-width: 140px; white-space: nowrap;">
+                        ⏸️ Pause
                     </button>
-                    <button onclick="skipBackward()" style="background: #9678D3; color: white; border: none; padding: 12px 20px; border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: 600;">
+                    <button onclick="skipBackward()" style="background: #9678D3; color: white; border: none; padding: 15px 20px; border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: 600; white-space: nowrap;">
                         ⏪ -10s
                     </button>
-                    <button onclick="restartVideo()" style="background: #E87D0D; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: 600;">
+                    <button onclick="restartVideo()" style="background: #E87D0D; color: white; border: none; padding: 15px 20px; border-radius: 8px; font-size: 1rem; cursor: pointer; font-weight: 600; white-space: nowrap;">
                         🔄 Start Over
                     </button>
                 </div>
@@ -1012,41 +1018,73 @@
         </div>
     </div>
     <div class="overlay" id="certificateOverlay" style="display: none;">
-        <div class="overlay-content" style="max-width: 700px; text-align: center; background: white; color: #000; border: 3px solid #330072; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
-            <div style="background: linear-gradient(135deg, #330072 0%, #9678D3 100%); padding: 20px; margin: -20px -20px 20px -20px; border-radius: 12px 12px 0 0;">
-                <h2 style="color: white; margin: 0; font-size: 1.8rem;">High Point University</h2>
-                <p style="color: rgba(255,255,255,0.9); margin: 5px 0 0 0; font-size: 1rem;">Office of Accessibility Resources and Services (OARS)</p>
+        <div class="overlay-content" style="max-width: 1100px; width: 90%; max-height: 95vh; text-align: center; background: white; color: #000; border: 3px solid #330072; box-shadow: 0 30px 80px rgba(0,0,0,0.4); border-radius: 16px; overflow: hidden;">
+            <div style="background: linear-gradient(135deg, #330072 0%, #9678D3 100%); padding: 12px 30px; margin: -3px -3px 0 -3px; border-radius: 13px 13px 0 0;">
+                <h2 style="color: white; margin: 0; font-size: 1.75rem; font-weight: 700;">High Point University</h2>
+                <p style="color: rgba(255,255,255,0.95); margin: 4px 0 0 0; font-size: 0.95rem; font-weight: 500;">Office of Accessibility Resources and Services (OARS)</p>
             </div>
-            <div style="padding: 20px;">
-                <h3 style="color: #330072; font-size: 1.8rem; margin-bottom: 20px; font-weight: 700;">Tutorial Completed</h3>
-                <div style="height: 2px; width: 100px; background: #330072; margin: 0 auto 20px auto;"></div>
-                <p style="color: #333; font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px;">Thank you for completing this tutorial!</p>
-                <div style="background: rgba(51, 0, 114, 0.05); padding: 15px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #330072;">
-                    <p style="color: #330072; font-size: 1.3rem; font-weight: 600; margin: 0;">"Interactive Video Tutorial"</p>
+            <div style="padding: 14px 50px 18px 50px;">
+                <h3 style="color: #330072; font-size: 1.85rem; margin: 0 0 6px 0; font-weight: 700;">Tutorial Completed</h3>
+                <div style="height: 3px; width: 120px; background: linear-gradient(90deg, #330072, #9678D3); margin: 0 auto 10px auto; border-radius: 2px;"></div>
+                <div style="background: rgba(51, 0, 114, 0.06); padding: 10px 20px; border-radius: 10px; margin: 8px 0; border-left: 5px solid #330072; box-shadow: 0 2px 8px rgba(51, 0, 114, 0.08);">
+                    <p style="color: #330072; font-size: 1.85rem; font-weight: 700; margin: 0;">NATURAL READER REVIEW</p>
                 </div>
-                <p style="color: #555; font-size: 1rem; line-height: 1.6; margin: 20px 0;">Your commitment to learning and professional development is appreciated.</p>
-                <p style="color: #888; font-size: 0.95rem; margin: 20px 0;">Completion Date: <span id="certificateDate"></span></p>
-                <button onclick="closeCertificate()" style="background: #330072; color: white; border: none; padding: 15px 30px; margin-top: 20px; border-radius: 8px; font-size: 1.1rem; cursor: pointer; font-weight: 600;">Close</button>
+                <div style="color: #444; font-size: 1.35rem; line-height: 1.6; margin: 10px 0; text-align: left; padding: 0 10px;"><strong>If you have any questions, please contact 336-841-9612.</strong></div>
+                <p style="color: #888; font-size: 1.05rem; margin: 10px 0 0 0; padding-top: 10px; border-top: 2px solid #f0f0f0;">Completion Date: <span id="certificateDate" style="font-weight: 600; color: #666;"></span></p>
+                <button onclick="closeCertificate()" style="background: linear-gradient(135deg, #330072, #4a0094); color: white; border: none; padding: 8px 32px; margin-top: 12px; margin-bottom: 2px; border-radius: 6px; font-size: 1.1rem; cursor: pointer; font-weight: 600; box-shadow: 0 4px 15px rgba(51, 0, 114, 0.3); transition: all 0.3s ease;">Close</button>
             </div>
         </div>
     </div>
     <script>
-        const items = [{"type":"statement","statementType":"tip","customTitle":"","showIcon":"yes","size":"small","timestamp":52,"text":"Creating an account will allow you to access PDFs uploaded through the Library tool located in the left-hand menu."},{"type":"statement","statementType":"tip","customTitle":"","showIcon":"yes","size":"small","timestamp":129,"text":"You may select an AI voice; however, this feature is available only with a paid subscription. If a visible avatar or face is not displayed, the account is using the free version."}];
-        const youtubeVideoId = "5kPhbTnyvwo";
+        const items = [{"type":"statement","statementType":"custom","customTitle":"DIRECTIONS","showIcon":"no","size":"small","timestamp":0,"text":"Welcome. Please read the reminder statements or answer the questions to proceed to the end of the video. Thank you."},{"type":"statement","statementType":"tip","customTitle":"","showIcon":"yes","size":"small","timestamp":52,"text":"Creating an account will allow you to access PDFs uploaded through the Library tool located in the left-hand menu."},{"type":"statement","statementType":"tip","customTitle":"","showIcon":"yes","size":"small","timestamp":129,"text":"You may select an AI voice; however, this feature is available only with a paid subscription. If a visible avatar or face is not displayed, the account is using the free version."}];
+        const youtubeVideoId = "";
+        const videoSource = "mp4url";
+        const mp4UrlSource = "https://tjpeddle.github.io/Natural-Reader-Tutorial/Natural%20Reader%20V.%205%203-28-2026.mp4";
         let youtubePlayer = null;
+        let videoElement = null;
         let itemsShown = new Set();
         let certificateShown = false;
         
+        // Initialize video player based on source
+        if (videoSource === 'mp4url') {
+            videoElement = document.getElementById('videoPlayer');
+            
+            // MP4 video monitoring
+            setInterval(() => {
+                if (videoElement && !videoElement.paused) {
+                    const currentTime = videoElement.currentTime;
+                    checkForItems(currentTime);
+                    checkVideoCompletion(currentTime);
+                }
+            }, 100);
+
+            // Fallback: trigger certificate directly when video ends
+            videoElement.addEventListener('ended', () => {
+                if (!certificateShown) {
+                    certificateShown = true;
+                    logCompletion();
+                    setTimeout(() => { showCertificate(); }, 500);
+                }
+            });
+        }
+        
         function togglePlayPause() {
-            if (youtubePlayer && youtubePlayer.getPlayerState) {
+            const btn = document.getElementById('playPauseBtn');
+            
+            if (videoSource === 'mp4url' && videoElement) {
+                if (videoElement.paused) {
+                    videoElement.play();
+                    btn.textContent = '⏸️ Pause';
+                } else {
+                    videoElement.pause();
+                    btn.textContent = '▶️ Play';
+                }
+            } else if (youtubePlayer && youtubePlayer.getPlayerState) {
                 const state = youtubePlayer.getPlayerState();
-                const btn = document.getElementById('playPauseBtn');
                 if (state === 1) {
-                    // Currently playing, so pause
                     youtubePlayer.pauseVideo();
                     btn.textContent = '▶️ Play';
                 } else {
-                    // Currently paused, so play
                     youtubePlayer.playVideo();
                     btn.textContent = '⏸️ Pause';
                 }
@@ -1054,7 +1092,9 @@
         }
         
         function skipBackward() {
-            if (youtubePlayer && youtubePlayer.getCurrentTime && youtubePlayer.seekTo) {
+            if (videoSource === 'mp4url' && videoElement) {
+                videoElement.currentTime = Math.max(0, videoElement.currentTime - 10);
+            } else if (youtubePlayer && youtubePlayer.getCurrentTime && youtubePlayer.seekTo) {
                 const current = youtubePlayer.getCurrentTime();
                 youtubePlayer.seekTo(Math.max(0, current - 10), true);
             }
@@ -1103,7 +1143,11 @@
         }
         function showQuestion(item, index) {
             itemsShown.add(index);
-            if (youtubePlayer) youtubePlayer.pauseVideo();
+            if (videoSource === 'mp4url' && videoElement) {
+                videoElement.pause();
+            } else if (youtubePlayer) {
+                youtubePlayer.pauseVideo();
+            }
             document.getElementById('overlayQuestionText').textContent = item.question;
             document.getElementById('quizFeedback').className = 'quiz-feedback';
             const answersContainer = document.getElementById('quizAnswers');
@@ -1114,7 +1158,11 @@
         }
         function showStatement(item, index) {
             itemsShown.add(index);
-            if (youtubePlayer) youtubePlayer.pauseVideo();
+            if (videoSource === 'mp4url' && videoElement) {
+                videoElement.pause();
+            } else if (youtubePlayer) {
+                youtubePlayer.pauseVideo();
+            }
             const statementTypes = {
                 'note': { icon: '💬', title: 'Note', color: '#4FC3F7' },
                 'tip': { icon: '💡', title: 'Tip', color: '#FFA94D' },
@@ -1153,13 +1201,16 @@
         function continueVideo() {
             document.getElementById('questionOverlay').classList.remove('active');
             document.getElementById('statementOverlay').classList.remove('active');
-            if (youtubePlayer && youtubePlayer.playVideo) {
+            
+            if (videoSource === 'mp4url' && videoElement) {
+                videoElement.play();
+                document.getElementById('playPauseBtn').textContent = '⏸️ Pause';
+            } else if (youtubePlayer && youtubePlayer.playVideo) {
                 try {
                     youtubePlayer.playVideo();
                     document.getElementById('playPauseBtn').textContent = '⏸️ Pause';
                 } catch (e) {
                     console.error('Error playing video:', e);
-                    // Retry after short delay
                     setTimeout(() => {
                         if (youtubePlayer && youtubePlayer.playVideo) {
                             youtubePlayer.playVideo();
@@ -1171,17 +1222,37 @@
         }
         function checkVideoCompletion(currentTime) {
             if (certificateShown) return;
-            if (youtubePlayer && youtubePlayer.getDuration) {
+            
+            let duration = 0;
+            if (videoSource === 'mp4url' && videoElement) {
+                duration = videoElement.duration;
+            } else if (youtubePlayer && youtubePlayer.getDuration) {
                 try {
-                    const duration = youtubePlayer.getDuration();
-                    if (duration > 0 && currentTime >= duration - 2) {
-                        certificateShown = true;
-                        setTimeout(() => {
-                            showCertificate();
-                        }, 1000);
-                    }
+                    duration = youtubePlayer.getDuration();
                 } catch (e) {}
             }
+            
+            if (duration > 0 && currentTime >= duration - 2) {
+                certificateShown = true;
+                logCompletion();
+                setTimeout(() => {
+                    showCertificate();
+                }, 1000);
+            }
+        }
+        function logCompletion() {
+            try {
+                fetch('https://wxglvxljwzymjfljurph.supabase.co/rest/v1/tutorial_completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind4Z2x2eGxqd3p5bWpmbGp1cnBoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ0NTcwMjEsImV4cCI6MjA5MDAzMzAyMX0.mjXOWt9dO1piWH2FJvZXhn26NF_y9qi1952kuwdjd1o',
+                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind4Z2x2eGxqd3p5bWpmbGp1cnBoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQ0NTcwMjEsImV4cCI6MjA5MDAzMzAyMX0.mjXOWt9dO1piWH2FJvZXhn26NF_y9qi1952kuwdjd1o',
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify({ created_at: new Date().toISOString() })
+                });
+            } catch(e) {}
         }
         function showCertificate() {
             const today = new Date();
@@ -1196,10 +1267,15 @@
             closeCertificate();
             itemsShown.clear();
             certificateShown = true;
-            if (youtubePlayer && youtubePlayer.seekTo) {
+            
+            if (videoSource === 'mp4url' && videoElement) {
+                videoElement.currentTime = 0;
+                videoElement.play();
+            } else if (youtubePlayer && youtubePlayer.seekTo) {
                 youtubePlayer.seekTo(0, true);
                 youtubePlayer.playVideo();
             }
+            
             setTimeout(() => {
                 certificateShown = false;
             }, 3000);
